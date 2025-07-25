@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booleans</title>
+  <title>Booleans 3 - Truthy & Falsey</title>
 
   <!-- CSS STYLE -->
   <style>
@@ -20,7 +20,64 @@
 
   <!-- JAVASCRIPT -->
   <script>
+    /* if (5) {
+       console.log('truthy');
+     }
+ 
+     if (0) {
+       console.log('truthy');
+     }
+ 
+     const cartQuantity = 5;
+ 
+     if (cartQuantity) {
+       console.log('cart has products');
+     }
+ 
+     console.log(!0);
+ 
+     console.log('text' / 5);
+ 
+     let variable1;
+     console.log(variable1);
+     */
+    //cant use const instead of let
+    /* const variable1 = undefined;
+    console.log(variable1); */
 
+    const result = 0 ? 'truthy' : 'falsy';
+    console.log(result);
+
+
+
+    /* let result;
+ 
+     if (condition) {
+       result = 'truthy';
+     } else {
+       result = 'falsy';
+     } */ //long code for above code
+
+
+
+    false && console.log('hello');
+
+    const message = 5 && 'hello';
+
+    /* let message;
+
+    if (condition) {
+      message = 'hello';
+    } - long code for above code */
+
+    const currency = undefined || 'USD';
+    console.log(currency);
+
+    /* let currency;
+    
+    if (!condition) {
+    currecy = 'USD';
+    } - long code for code above */
 
   </script>
 

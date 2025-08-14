@@ -17,12 +17,13 @@ export function renderPaymentSummary() {
 
   const totalBeforeTaxCents = productPriceCents + shippingPriceCents;
   const taxCents = totalBeforeTaxCents * 0.1;
-  const totatCents = totalBeforeTaxCents + taxCents;
+  const totalCents = totalBeforeTaxCents + taxCents;
 
   const paymentSummaryHTML = `
-   <div class="payment-summary-title">
-      Order Summary
-    </div>
+  <div class="payment-summary-title">
+    Order Summary
+  </div>
+
 
     <div class="payment-summary-row">
       <div>Items (3):</div>
@@ -31,7 +32,7 @@ export function renderPaymentSummary() {
       </div>
     </div>
 
-    <div class="payment-summary-row">
+   <div class="payment-summary-row">
       <div>Shipping &amp; handling:</div>
       <div class="payment-summary-money">
         $${formatCurrency(shippingPriceCents)}
@@ -45,6 +46,7 @@ export function renderPaymentSummary() {
       </div>
     </div>
 
+
     <div class="payment-summary-row">
       <div>Estimated tax (10%):</div>
       <div class="payment-summary-money">
@@ -55,7 +57,7 @@ export function renderPaymentSummary() {
     <div class="payment-summary-row total-row">
       <div>Order total:</div>
       <div class="payment-summary-money">
-        $${formatCurrency(totatCents)}
+        $${formatCurrency(totalCents)}
       </div>
     </div>
 
@@ -63,6 +65,7 @@ export function renderPaymentSummary() {
       Place your order
     </button>
   `;
+
 
   document.querySelector('.js-payment-summary')
     .innerHTML = paymentSummaryHTML;

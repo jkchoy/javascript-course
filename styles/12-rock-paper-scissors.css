@@ -2,7 +2,16 @@ body {
   background-color: black;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 10em;
 }
+
+.container {
+  max-width: 1100px;
+  margin-line: auto;
+}
+
+
 
 .title {
   font-size: 30px;
@@ -37,7 +46,13 @@ body {
 .auto-play-button {
   background-color: white;
   border: none;
+  border-radius: 4px;
   font-size: 15px;
   padding: 8px 15px;
   cursor: pointer;
+}
+
+.bbt {
+  font-size: 16px;
+  line-height: 1.5;
 }

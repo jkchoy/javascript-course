@@ -56,14 +56,14 @@ document.querySelector('.js-scissors-button')
     playGame('scissors');
   });
 
-document.querySelector('.js-lizard-button')
+document.querySelector('.js-fire-button')
   .addEventListener('click', () => {
-    playGame('lizard');
+    playGame('fire');
   });
 
-document.querySelector('.js-spock-button')
+document.querySelector('.js-waterballoon-button')
   .addEventListener('click', () => {
-    playGame('spock');
+    playGame('waterballoon');
   });
 
 
@@ -74,10 +74,10 @@ document.body.addEventListener('keydown', (event) => {
     playGame('paper');
   } else if (event.key === 's') {
     playGame('scissors');
-  } else if (event.key === 'l') {
-    playGame('lizard');
-  } else if (event.key === 'k') {
-    playGame('spock');
+  } else if (event.key === 'f') {
+    playGame('fire');
+  } else if (event.key === 'w') {
+    playGame('waterballoon');
   }
 });
 
@@ -95,10 +95,10 @@ function playGame(playerMove) {
       result = 'you win';
     } else if (computerMove === 'scissors') {
       result = 'tie';
-    } else if (computerMove === 'lizard') {
-      result = 'you win';
+    } else if (computerMove === 'fire') {
+      result = 'you lose';
     }
-    else if (computerMove === 'spock') {
+    else if (computerMove === 'waterballoon') {
       result = 'you win';
     }
 
@@ -111,10 +111,10 @@ function playGame(playerMove) {
       result = 'tie';
     } else if (computerMove === 'scissors') {
       result = 'you lose';
-    } else if (computerMove === 'lizard') {
+    } else if (computerMove === 'fire') {
       result = 'you lose';
     }
-    else if (computerMove === 'spock') {
+    else if (computerMove === 'waterballoon') {
       result = 'you win';
     }
 
@@ -127,42 +127,40 @@ function playGame(playerMove) {
       result = 'you lose';
     } else if (computerMove === 'scissors') {
       result = 'you win';
-    } else if (computerMove === 'lizard') {
+    } else if (computerMove === 'fire') {
       result = 'you lose';
     }
-    else if (computerMove === 'spock') {
+    else if (computerMove === 'waterballoon') {
       result = 'you win';
     }
 
+    // fire
+  } else if (playerMove === 'fire') {
+    if (computerMove === 'rock') {
+      result = 'you lose';
+    } else if (computerMove === 'paper') {
+      result = 'you win';
+    } else if (computerMove === 'scissors') {
+      result = 'you win';
+    } else if (computerMove === 'fire') {
+      result = 'tie';
+    }
+    else if (computerMove === 'waterballoon') {
+      result = 'you lose';
+    }
 
-    // lizard
-  } else if (playerMove === 'lizard') {
+    // waterballoon
+  } else if (playerMove === 'waterballoon') {
     if (computerMove === 'rock') {
       result = 'you lose';
     } else if (computerMove === 'paper') {
       result = 'you win';
     } else if (computerMove === 'scissors') {
       result = 'you lose';
-    } else if (computerMove === 'lizard') {
+    } else if (computerMove === 'fire') {
+      result = 'you win';
+    } else if (computerMove === 'waterballoon') {
       result = 'tie';
-    }
-    else if (computerMove === 'spock') {
-      result = 'you win';
-    }
-  }
-  // spock
-  else if (playerMove === 'spock') {
-    if (computerMove === 'rock') {
-      result = 'you win';
-    } else if (computerMove === 'paper') {
-      result = 'you lose';
-    } else if (computerMove === 'scissors') {
-      result = 'you lose';
-    } else if (computerMove === 'spock') {
-      result = 'tie';
-    }
-    else if (computerMove === 'lizard') {
-      result = 'you win';
     }
   }
 
@@ -206,9 +204,9 @@ function pickComputerMove() {
   } else if (randomNumber >= 2 / 5 && randomNumber < 3 / 5) {
     computerMove = 'scissors';
   } else if (randomNumber >= 3 / 5 && randomNumber < 4 / 5) {
-    computerMove = 'lizard';
+    computerMove = 'fire';
   } else if (randomNumber >= 4 / 5 && randomNumber < 1) {
-    computerMove = 'spock';
+    computerMove = 'waterballoon';
   }
 
 

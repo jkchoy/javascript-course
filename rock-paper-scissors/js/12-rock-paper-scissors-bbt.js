@@ -76,7 +76,8 @@ document.body.addEventListener('keydown', (event) => {
     playGame('scissors');
   } else if (event.key === 'l') {
     playGame('lizard');
-  } else if (event.key === 'k') {
+  }
+  else if (event.key === 'k') {
     playGame('spock');
   }
 });
@@ -97,9 +98,8 @@ function playGame(playerMove) {
       result = 'tie';
     } else if (computerMove === 'lizard') {
       result = 'you win';
-    }
-    else if (computerMove === 'spock') {
-      result = 'you win';
+    } else if (computerMove === 'spock') {
+      result = 'you lose';
     }
 
 
@@ -113,8 +113,7 @@ function playGame(playerMove) {
       result = 'you lose';
     } else if (computerMove === 'lizard') {
       result = 'you lose';
-    }
-    else if (computerMove === 'spock') {
+    } else if (computerMove === 'spock') {
       result = 'you win';
     }
 
@@ -128,15 +127,14 @@ function playGame(playerMove) {
     } else if (computerMove === 'scissors') {
       result = 'you win';
     } else if (computerMove === 'lizard') {
+      result = 'you win';
+    } else if (computerMove === 'spock') {
       result = 'you lose';
     }
-    else if (computerMove === 'spock') {
-      result = 'you win';
-    }
+  }
 
-
-    // lizard
-  } else if (playerMove === 'lizard') {
+  // lizard
+  else if (playerMove === 'lizard') {
     if (computerMove === 'rock') {
       result = 'you lose';
     } else if (computerMove === 'paper') {
@@ -145,23 +143,7 @@ function playGame(playerMove) {
       result = 'you lose';
     } else if (computerMove === 'lizard') {
       result = 'tie';
-    }
-    else if (computerMove === 'spock') {
-      result = 'you win';
-    }
-  }
-  // spock
-  else if (playerMove === 'spock') {
-    if (computerMove === 'rock') {
-      result = 'you win';
-    } else if (computerMove === 'paper') {
-      result = 'you lose';
-    } else if (computerMove === 'scissors') {
-      result = 'you lose';
     } else if (computerMove === 'spock') {
-      result = 'tie';
-    }
-    else if (computerMove === 'lizard') {
       result = 'you win';
     }
   }
@@ -210,8 +192,7 @@ function pickComputerMove() {
   } else if (randomNumber >= 4 / 5 && randomNumber < 1) {
     computerMove = 'spock';
   }
-
-
+  console.log(randomNumber);
   return computerMove;
 
 }

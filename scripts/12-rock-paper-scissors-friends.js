@@ -159,8 +159,7 @@ function playGame(playerMove) {
       result = 'you lose';
     } else if (computerMove === 'fire') {
       result = 'you win';
-    }
-    else if (computerMove === 'waterballoon') {
+    } else if (computerMove === 'waterballoon') {
       result = 'tie';
     }
   }
@@ -182,8 +181,8 @@ function playGame(playerMove) {
     .innerHTML = result;
 
   document.querySelector('.js-moves').innerHTML = `you
-<img src="images/${playerMove}-emoji.png" class="move-icon" alt="rock emoji">
-<img src="images/${computerMove}-emoji.png" class="move-icon" alt="scissors emoji">
+<img src="images/${playerMove}-emoji.png" class="move-icon" alt="#">
+<img src="images/${computerMove}-emoji.png" class="move-icon" alt="#">
 computer`;
 }
 
@@ -193,19 +192,24 @@ function updateScoreElement() {
     .innerHTML = `wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`;
 }
 
+
 function pickComputerMove() {
   const randomNumber = Math.random();
 
   let computerMove = '';
 
-  if (randomNumber >= 0 && randomNumber < 1 / 3) {
+  if (randomNumber >= 0 && randomNumber < 1 / 5) {
     computerMove = 'rock';
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+  } else if (randomNumber >= 1 / 5 && randomNumber < 2 / 5) {
     computerMove = 'paper';
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+  } else if (randomNumber >= 2 / 5 && randomNumber < 3 / 5) {
     computerMove = 'scissors';
+  } else if (randomNumber >= 3 / 5 && randomNumber < 4 / 5) {
+    computerMove = 'fire';
+  } else if (randomNumber >= 4 / 5 && randomNumber < 1) {
+    computerMove = 'waterballoon';
+
   }
 
   return computerMove;
-
 }
